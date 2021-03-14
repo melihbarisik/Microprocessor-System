@@ -1,5 +1,5 @@
 ; Mikroislemcili Sistemler ve Laboratuvari Odev 2
-; Melih Ensar Barisik B181210393
+; Melih Ensar Barisik 
 
  		ORG 00h
 		SJMP Basla
@@ -13,7 +13,7 @@ Basla:	MOV P2,#00h ;Bu kisimda Portlar ve Registerlara degerler veriliyor.
 		MOV R0,#0FFh
 		MOV R1,#0FFh
 		MOV P1,#0FFH
-BASILI: JB P1.0,BASILI  ;P1 butonu 0 olana yani basma isi birakana kadar çalistiran kisim
+BASILI: JB P1.0,BASILI  ;P1 butonu 0 olana yani basma isi birakana kadar Ã§alistiran kisim
 
 		
 Ilerle: 	
@@ -22,7 +22,7 @@ Ilerle:
 		MOV P2,#00000000B
 		 
 		 
-		ACALL BekletmeBir //Iki adet fonksiyon çagirilacak
+		ACALL BekletmeBir //Iki adet fonksiyon Ã§agirilacak
 		ACALL Bekletme
 		
 		
@@ -34,7 +34,7 @@ Timer:	MOV TMOD,#00H
 		MOV TH0,#0F8H
 		MOV TL0,#0CCH 
 		SETB TR0
-Dongu: 	JNB TF0,Dongu // Bayrak sifir olana kadar dongu çalistiriliyor.
+Dongu: 	JNB TF0,Dongu // Bayrak sifir olana kadar dongu Ã§alistiriliyor.
 		CLR TR0 
 		CLR TF0 
 		DJNZ R4,Timer
@@ -57,7 +57,7 @@ Dongu2: JNB TF0,Dongu2
 		DJNZ R3,Sira2  ;R3 bir azaltilip sifir degil ise Sira2 ye dallan
 	         RET 				
 Calistir:
-		MOV P3,#11111110B ;4 segmentten ilki seçiliyor.
+		MOV P3,#11111110B ;4 segmentten ilki seÃ§iliyor.
 		MOV P2,#01010101B ;Ismimin bas harfi olan M yaziliyor
 		
 		
@@ -73,15 +73,15 @@ Seg2:	DJNZ R0,Seg2 ;R0 bir azaltilip sifir degil ise Seg2 dallan
 		DJNZ R1,Seg2 ;R1 bir azaltilip sifir degil ise Seg2 dallan
 		MOV R0,#0FFh
 		MOV R1,#11h
-		MOV P3,#11111011B ;4 Segmentten ücüncüsü seciliyor
-		MOV P2,#00000110B ;Ögretinimim olan 1 sayisi yazildi
+		MOV P3,#11111011B ;4 Segmentten Ã¼cÃ¼ncÃ¼sÃ¼ seciliyor
+		MOV P2,#00000110B ;Ã–gretinimim olan 1 sayisi yazildi
 
 
 Seg3:	DJNZ R0,Seg3 ;R0 bir azaltilip sifir degil ise Seg3 dallan
 		DJNZ R1,Seg3 ;R1 bir azaltilip sifir degil ise Seg3 dallan
 		MOV R0,#0FFh
 		MOV R1,#11h
-		MOV P3,#11110111B  ;4 Segmentten dördüncüsü seciliyor
+		MOV P3,#11110111B  ;4 Segmentten dÃ¶rdÃ¼ncÃ¼sÃ¼ seciliyor
 		MOV P2,#01111100B ;Ders grubum olan B harfi yazildi
 		
 		
